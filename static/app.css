@@ -1,4 +1,134 @@
-.board {
-    border: solid black 1px;
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    position: relative;
+    align-items: center; 
+    display: flex; 
+    background-color: #888488;
+    margin-left: 20px;
 }
+
+.bouncing-text {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    font-size: 70px;
+    font-family: arial black;  
+}
+
+.b, .o, .g1, .g2, .l, .e {
+    color: #6a3fb6;
+    text-shadow: 0 3px #3e3a47, 0 5px #3e3a47, 0 7px #3e3a47;
+}
+
+#boggle {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    top: 150px;
+}
+
+.right-container {
+  position: absolute;
+  right: 50px;
+  width: 50%;
+  height: 300px;
+  display: inline-block;
+  align-items: center;
+}
+
+.board {
+    border: solid black 2px;
+    background-color: #a094b7;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    left: 50px;
+    text-align: center;
+    padding: 10px;
+}
+
+.score-timer {
+  position: relative;
+  font-family: cursive;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.msg {
+  position: relative;
+  font-family:cursive;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.add_word {
+    position: relative;
+    text-align: center;
+}
+
+.words {
+  position: relative;
+  left: 100px;
+  font-family: cursive;
+}
+
+td {
+    border: solid black 1px;
+    background-color: rgb(222, 224, 233);
+}
+
+#high-score {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    padding: 5px;
+    width: 350px;
+    position: relative;
+    left: 450px;
+    bottom: 120px;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1) translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-35px);}
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    58%  { transform: scale(1,1) translateY(-7px); }
+    65%  { transform: scale(1,1) translateY(0);}
+    100% { transform: scale(1,1) translateY(0);}
+}
+
+.b {
+animation: bounce 3s ease infinite;
+}
+
+.o {
+animation: bounce 3s ease infinite .3s;
+}
+
+.g1 {
+animation: bounce 3s ease infinite .1s;
+}
+
+.g2 {
+animation: bounce 3s ease infinite .4s;
+}
+
+.l {
+animation: bounce 3s ease infinite .2s;
+}
+
+.e {
+animation: bounce 3s ease infinite .5s;
+}
+  
+@keyframes scale {
+  0% {transform: scaleX(1);}
+  25% {transform: scaleX(0.4);}
+  50% {transform: scaleX(1);}
+  75% {transform: scaleX(0.9);}
+  100% {transform: scaleX(1);}
+}
+  

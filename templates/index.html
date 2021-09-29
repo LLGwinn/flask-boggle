@@ -8,8 +8,16 @@
     <title>Boggle!</title>
 </head>
 <body>
+    <div class="bouncing-text">
+        <div class="b">B</div>
+        <div class="o">O</div>
+        <div class="g1">G</div>
+        <div class="g2">G</div>
+        <div class="l">L</div>
+        <div class="e">E</div>
+    </div>
     <section id='boggle'>
-        <table class='board'>
+        <table class='board' id='board'>
             <tbody>
                 {% for row in board %}
                 <tr>
@@ -21,29 +29,24 @@
             </tbody>
         </table>
 
-        <p>High Score: 
-            <b>{{ highscore }}</b> 
-            in {{ turns }} plays
-        </p>
-        
-        <p>
+        <div class='right-container'>
+            <p class='score-timer'>
             Score: <b class='score'>0</b>
             Seconds Left: <b class='timer'></b>
-        </p>
+            </p>
+            <p class='msg'>
+                <!-- status message here -->
+            </p>
+            <form method='POST' class='add_word'>
+                <input type='text' name='word' class='word' placeholder="Enter a word" autofocus required>
+                <button>Enter</button>
+            </form>
+            <ul class='words'>
+                <!-- word list here -->   
+            </ul>
+        </div>
 
-        <form method='POST' class='add_word'>
-            <input type='text' name='word' class='word' placeholder="Enter a word" autofocus required>
-            <button>Enter</button>
-        </form>
-
-        <p class='msg'>
-            <!-- status message here -->
-        </p>
-        
-        <ul class='words'>
-            <!-- word list here -->   
-        </ul>
-
+        <p id='high-score'>High Score: <b>{{ highscore }}</b> in {{ turns }} games</p>
     </section>
 
     <script src="http://unpkg.com/jquery"></script>
